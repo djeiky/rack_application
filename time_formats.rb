@@ -11,12 +11,14 @@ class TimeFormats
   attr_accessor :unknown_formats
   attr_accessor :formats
   def initialize(params_string)
-    @request_formats = params_string.split(",")
-    @unknown_formats = []
-    @formats = []
+    @get_string = params_string
   end
 
   def check_formats
+    @request_formats = @get_string.split(",")
+    @unknown_formats = []
+    @formats = []
+
     @request_formats.each do |f|
       if ALLOWED_FORMATS[f.to_sym]
         @formats << ALLOWED_FORMATS[f.to_sym]
