@@ -14,7 +14,6 @@ class TimeFormats
     @request_formats = params_string.split(",")
     @unknown_formats = []
     @formats = []
-    check_formats
   end
 
   def check_formats
