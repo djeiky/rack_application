@@ -8,14 +8,13 @@ class TimeFormats
                 seconds: "%S"
                 }.freeze
 
-  attr_accessor :unknown_formats
-  attr_accessor :formats
-  def initialize(params_string)
-    @get_string = params_string
+  attr_reader :unknown_formats
+  def initialize(formats)
+    @formats = formats
   end
 
   def check_formats
-    @request_formats = @get_string.split(",")
+    @request_formats = @formats.split(",")
     @unknown_formats = []
     @formats = []
 
